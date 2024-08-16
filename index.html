@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Days of code - Deploy any application to Git&Github</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body, html {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #FF8A8A;
+            overflow: hidden;
+            position: relative;
+            background: #FF8A8A;
+        }
+        .card {
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            letter-spacing: 2px;
+            animation: drop 1s ease-out;
+            color: #3C3D37;
+            z-index: 1;
+        }
+        @keyframes drop {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body> 
+    <div class="card">
+        Hello World !!
+    </div>
+
+    <script>
+        function createStar() {
+            const star = document.createElement('div');
+            star.classList.add('star');
+
+            const size = Math.random() * 30 + 10 + 'px'; 
+            star.style.width = size;
+            star.style.height = size;
+
+            star.style.top = Math.random() * 100 + 'vh';
+            star.style.left = Math.random() * 100 + 'vw';
+
+            const colors = ['#FFD700', '#FF69B4', '#87CEEB', '#32CD32', '#FFA07A'];
+            star.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+
+            document.body.appendChild(star);
+        }
+
+        for (let i = 0; i < 100; i++) { 
+            createStar();
+        }
+    </script>
+</body>
+</html>
